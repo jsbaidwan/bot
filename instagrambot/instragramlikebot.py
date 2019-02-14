@@ -44,6 +44,14 @@ class InstagramBot:
         pic_hrefs = [href for href in pic_hrefs if user_id in href]
         print(user_id + ' photos: ' + str(len(pic_hrefs)))
 
+        for pic_href in pic_hrefs:
+            driver.get(pic_href)
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            try:
+                driver.find_element_by_link_text("Like").click()
+                time.sleep(18)
+            except Exception as e:
+                time.sleep(2)
 
 
 myInstagramLogin = InstagramBot('', '')     # enter your username and password
