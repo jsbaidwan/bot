@@ -34,7 +34,9 @@ class InstagramBot:
         driver = self.driver
         driver.get("https://www.instagram.com/" + user_id + "/")
         time.sleep(2)
-
+        for i in range(1, 3):
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time(2)
 
 
 
