@@ -21,7 +21,14 @@ class InstagramBot:
         loginButton.click()
         loginButton.send_keys(Keys.ENTER)
         time.sleep(2)
-
+        user_name_elem = driver.find_element_by_name('username')
+        user_name_elem.clear()
+        user_name_elem.send_keys(self.username)
+        password_elem = driver.find_element_by_name('password')
+        password_elem.clear()
+        password_elem.send_keys(self.password)
+        password_elem.send_keys(Keys.ENTER)
+        time.sleep(2)
 
 
 myInstagramLogin = InstagramBot('fdkjgkdf', 'dfkjg')     # enter your username and password
