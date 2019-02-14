@@ -57,3 +57,6 @@ class InstagramBot:
 myInstagramLogin = InstagramBot('', '')     # enter your username and password
 myInstagramLogin.login()
 myInstagramLogin.like_photo('jsbaidwan')
+
+
+# Markets and DATA
