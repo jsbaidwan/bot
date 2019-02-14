@@ -30,7 +30,14 @@ class InstagramBot:
         password_elem.send_keys(Keys.ENTER)
         time.sleep(2)
 
+    def like_photo(self, user_id):
+        driver = self.driver
+        driver.get("https://www.instagram.com/" + user_id + "/")
+        time.sleep(2)
 
-myInstagramLogin = InstagramBot('fdkjgkdf', 'dfkjg')     # enter your username and password
+
+
+
+myInstagramLogin = InstagramBot('', '')     # enter your username and password
 myInstagramLogin.login()
-
+myInstagramLogin.like_photo('jsbaidwan')
