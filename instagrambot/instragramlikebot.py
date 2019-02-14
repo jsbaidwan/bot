@@ -34,9 +34,15 @@ class InstagramBot:
         driver = self.driver
         driver.get("https://www.instagram.com/" + user_id + "/")
         time.sleep(2)
-        for i in range(1, 3):
+
+        for i in range(1, 3):   # set the number of scroll required
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time(2)
+            time.sleep(2)
+
+        hrefs = driver.find_elements_by_tag_name('a')
+        pic_hrefs = [elem.get_attribute('href') for elem in hrefs]
+        pic_hrefs = [href for href in pic_hrefs if user_id in href]
+        print(user_id + ' photos: ' + str(len(pic_hrefs)))
 
 
 
